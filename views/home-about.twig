@@ -1,0 +1,106 @@
+{% extends 'home-default.twig' %}
+
+
+{# All the twig objects to be used #}
+{% include '/objects/navbar.twig' %}
+{% include '/objects/theme.twig' %}
+
+
+
+{# Called in the html head - for adding scripts #}
+
+{% block setup %}
+	<link rel="stylesheet" type="text/css" href="/stylesheets/superslides.css">
+	<link href="http://fonts.googleapis.com/css?family=Raleway:200,100,400,700" rel="stylesheet" type="text/css" />
+	<style type="text/css">
+		.slides-navigation-arrow {
+			color: #EEE;
+			text-decoration: none;
+			font-family: 'Raleway';
+			font-weight: 700;
+			font-size: 42px;
+			text-shadow: 2px 2px 2px rgba(55, 55, 55, 1);
+		}
+		.slides-navigation-arrow:hover{
+			color: #CCC;
+			text-decoration: none;
+			text-shadow: 3px 3px 3px rgba(55, 55, 55, 1);
+		}
+		.slide-container {
+			background-color: rgba(55,55,55,0.5);
+			height: 100%;
+			padding: 40px;
+			padding-left: 55px;
+		}
+		.slide-container * {
+			color: #EEE;
+			opacity: 1;
+		}
+	</style>
+	<script type="text/javascript" src="/javascripts/jquery.animate-enhanced.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.superslides.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#slides').superslides();
+		});
+	</script>
+{% endblock %}
+
+{# outside the main container goes the "navbar" #}
+{% block navbar %}
+	<div id="slides">
+	  <ul class="slides-container">
+	    <li>
+	      <img src="/images/about/urban.jpg" alt="">
+	      <div class="col-lg-4 slide-container">
+        	<div class="page-header"><h1>Test</h1></div>
+        	<p>
+        		<span class="indent"></span>Lorem ipsum dolor sit amet, an eirmod tamquam nam, sit et elitr numquam. Id has intellegam reprehendunt, adipisci vulputate has ne. Mei aeterno perfecto id, omnium nominati tractatos id vix. Ea ius ridens quodsi accusam, sit consul reformidans ad. Ad saepe delicatissimi vis, veri regione te sea. Docendi dolores omittam eos ad.
+
+        		Fugit vivendo disputationi eum ea. Ex nibh fabulas sit, cibo urbanitas eum ea. Mel ad nihil graece impetus, sit virtute aliquando an. Ei sit sanctus fuisset copiosae, et eros fugit salutandi usu. Summo accusamus disputando an mel, has adolescens cotidieque an.
+        	</p>
+	      </div>
+	    </li>
+	    <li>
+	      <img src="/images/about/philosophy.jpg" alt="">
+	      <div class="col-lg-4 slide-container">
+        	<div class="page-header"><h1>Test</h1></div>
+        	<p>
+        		<span class="indent"></span> Lorem ipsum dolor sit amet, an eirmod tamquam nam, sit et elitr numquam. Id has intellegam reprehendunt, adipisci vulputate has ne. Mei aeterno perfecto id, omnium nominati tractatos id vix. Ea ius ridens quodsi accusam, sit consul reformidans ad. Ad saepe delicatissimi vis, veri regione te sea. Docendi dolores omittam eos ad.
+
+        		Fugit vivendo disputationi eum ea. Ex nibh fabulas sit, cibo urbanitas eum ea. Mel ad nihil graece impetus, sit virtute aliquando an. Ei sit sanctus fuisset copiosae, et eros fugit salutandi usu. Summo accusamus disputando an mel, has adolescens cotidieque an.
+        	</p>
+	      </div>
+	    </li>
+	    <li>
+	      <img src="/images/about/presentation.jpg" alt="">
+	      <div class="col-lg-4 slide-container">
+        	<div class="page-header"><h1>Test</h1></div>
+        	<p>
+        		<span class="indent"></span> Lorem ipsum dolor sit amet, an eirmod tamquam nam, sit et elitr numquam. Id has intellegam reprehendunt, adipisci vulputate has ne. Mei aeterno perfecto id, omnium nominati tractatos id vix. Ea ius ridens quodsi accusam, sit consul reformidans ad. Ad saepe delicatissimi vis, veri regione te sea. Docendi dolores omittam eos ad.
+
+        		Fugit vivendo disputationi eum ea. Ex nibh fabulas sit, cibo urbanitas eum ea. Mel ad nihil graece impetus, sit virtute aliquando an. Ei sit sanctus fuisset copiosae, et eros fugit salutandi usu. Summo accusamus disputando an mel, has adolescens cotidieque an.
+        	</p>
+	      </div>
+	    </li>
+	    <li>
+	      <img src="/images/about/nerf_gun.jpg" alt="">
+	      <div class="col-lg-4 col-lg-offset-8 slide-container">
+        	<div class="page-header"><h1>Test</h1></div>
+        	<p>
+        		<span class="indent"></span> Lorem ipsum dolor sit amet, an eirmod tamquam nam, sit et elitr numquam. Id has intellegam reprehendunt, adipisci vulputate has ne. Mei aeterno perfecto id, omnium nominati tractatos id vix. Ea ius ridens quodsi accusam, sit consul reformidans ad. Ad saepe delicatissimi vis, veri regione te sea. Docendi dolores omittam eos ad.
+
+        		Fugit vivendo disputationi eum ea. Ex nibh fabulas sit, cibo urbanitas eum ea. Mel ad nihil graece impetus, sit virtute aliquando an. Ei sit sanctus fuisset copiosae, et eros fugit salutandi usu. Summo accusamus disputando an mel, has adolescens cotidieque an.
+        	</p>
+	      </div>
+	    </li>
+	  </ul>
+	  <nav class="slides-navigation">
+	    <a href="#" class="next slides-navigation-arrow">&#8594;</a>
+	    <a href="#" class="prev slides-navigation-arrow">&#8592;</a>
+	  </nav>
+	</div>
+
+{% endblock %}
+
+

@@ -1,0 +1,17 @@
+{% obj list_group %}
+	{% set items = [] %}
+	{% prototype addItems %}
+		{% set items = items|merge(item) %}
+	{% endprototype %}
+	{% prototype render %}
+		<div class="list-group">
+		  {% for item in items %}
+			  <a href="{{ item.link }}" class="list-group-item">
+			    <h4 class="list-group-item-heading">{{ item.heading }}</h4>
+			    <p class="list-group-item-text">{{ item.content }}</p>
+			  </a>
+		  {% endfor %}
+		</div>
+	{% endprototype %}
+
+{% endobj %}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+{# the objects to be used #}
+{% include 'objects/navbar.twig' %}
+{% include 'objects/imports.twig' %}
+
+{# init object to handle importation #}
+{% set imports = imports() %}
+<html>
+<head>
+	<title>{{ title }}</title>
+	<link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+
+	{# importing the css #}
+	{{ imports.bootstrap_css() }}
+
+	{# importing the javascript #}
+	{{ imports.jQuery() }}
+	{{ imports.bootstrap_js() }}
+
+
+	{{ block('setup') }}
+	<style type="text/css">
+		.footer {
+		  position: relative;
+		  margin-top: 150px; /* negative value of footer height */
+		  height: 150px;
+		  clear:both;
+		  padding-top:20px;
+		  border-top: 1px solid #E7E7E7;
+		  background-color: #FAFAFA;
+		}
+		.indent {
+			padding-right:30px;
+		}
+	</style>
+
+</head>
+<body>
+	{{ block('navbar') }}
+	{% if block('content') %}
+		<div class="container" style="margin-bottom:40px;">
+			{{ block('content') }}
+		</div>
+	{% endif %}
+	{% if footer %}
+		<footer class="footer">
+			<div class="container">
+				<div class="col-md-3 col-md-offset-4">
+					<p class="text-primary">Contact</p>
+					<p class="text-info">henguin1001@gmail.com</p>
+				</div>
+				<div class="col-md-3">
+					<p class="text-primary">Developers</p>
+					<p><a class="text-info" href="https://github.com/Hentech/GradesOnline">Gradeviewer on Github</a></p>
+
+				</div>
+			</div>
+
+		</footer>
+	{% endif %}
+
+</body>
+</html>

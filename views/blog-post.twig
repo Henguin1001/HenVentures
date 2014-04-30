@@ -1,0 +1,46 @@
+{% extends 'blog-default.twig' %}
+{% block content %}
+    <div class="row well">
+			<div class="col-lg-3">
+				<img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash3/t1/c0.0.160.160/p160x160/1385434_578980212149621_98624621_n.jpg">
+			</div>
+			<div class="col-lg-9">
+				<h1>Henry Troutman</h1>
+				<p class="lead">Some people say that I am awesome, those people are right. <br> Global Intranet Engineer at Hentech Laboratories</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="btn-group btn-group-justified">
+				<a href="http://github.com/Henguin1001" class="btn btn-default">Github</a>
+				<a href="https://twitter.com/HenryTroutman" class="btn btn-default">Twitter</a>
+				<a href="" class="btn btn-default">Github</a>
+			</div>
+		</div>
+		<div class="row" style="margin-top:20px;">
+			<div class="col-lg-3">
+				<div class="list-group">
+					<a href="/blog" class="list-group-item active">
+						All
+					</a>
+					<a href="/blog/category/updates" class="list-group-item">Updates
+					</a>
+					<a href="/blog/category/stories" class="list-group-item">Stories
+					</a>
+				</div>
+				<div class="list-group">
+					<a href="{{previousPage}}" class="btn btn-primary btn-lg btn-block">Back</a>
+				</div>
+
+			</div>
+			<div class="col-lg-9">
+					<div class="row well">
+						<div class="container container-small">
+							<div class="col-lg-2 col-lg-offset-10"><p>{{ post.date }}</p></div>
+						</div>
+						<div class="container container-small">
+							{{post.body}}
+						</div>
+					</div>
+			</div>
+		</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% obj navbar %}
+	
+{% endobj %}
+
+{% obj header_henryisawesome %}
+	<header class="dealwithit">
+		<div class="dealwithit-container" style="background-image:url('{{image| default('') }}')">
+			<h1 align="center" class="dealwithit-heading center">Henry is
+			  <span
+			     class="txt-rotate"
+			     data-period="2000"
+			     data-rotate='{{henryis| json_encode }}'></span>
+			</h1>
+		</div>
+	</header>
+{% endobj %}

@@ -1,0 +1,92 @@
+{% extends 'home-default.twig' %}
+
+
+{# 
+	All the twig objects to be used 
+#}
+
+{% include '/objects/navbar.twig' %}
+{% include '/objects/theme.twig' %}
+{% obj blog_posts %}
+	{% set this = __methods %}
+	{% prototype post_template %}
+		<a href="blog/archive/{{ post.id }}" class="list-group-item">
+			<h4 class="list-group-item-heading">{{ post.title }} - <i>{{ post.date }}</i> </h4>
+			<p class="list-group-item-text">{{ post.description }}</p>
+		</a>
+	{% endprototype %}
+	{% prototype render %}
+		<div class="list-group">
+		  {% for post in posts %}
+			  {{ this.post_template({post:post}) }}
+		  {% endfor %}
+		</div>
+	{% endprototype %}
+
+{% endobj %}
+
+
+{#
+	Called in the html head - for adding scripts
+#}
+
+{% block setup %}
+	<link href="http://fonts.googleapis.com/css?family=Raleway:200,100,400,700" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="./stylesheets/home-index-scroll.css">
+	<script type="text/javascript" src="./javascripts/home-index-scroll.js"></script>
+{% endblock %}
+
+{#
+	outside the main container goes the "navbar", in this instance it is a "header"
+#}
+{% block navbar %}
+	{% set nav = header_henryisawesome({ henryis:["awesome.","looking for internships.","cloud-computing.","back from fishin&#39;."], image:"./images/dealwithit.jpg" }) %}
+	{{ nav.render }}
+{% endblock %}
+
+{#
+	The content of the page
+#}
+{% block content %}
+	<div class="row" style="padding-top:30px;">
+
+		{#
+			The Info section about Henry
+		#}
+		<div class="col-lg-5">
+			<div class="page-header">
+				<h2>Who is Henry?</h2>
+			</div>
+			<img src="./images/profile.jpg" class="image-block">
+			<div class="list-group">
+			  <a href="https://github.com/Henguin1001" class="list-group-item">
+				Github
+			  </a>
+			  <a href="https://www.facebook.com/pages/Fans-of-Henry-Troutman/111370232381839" class="list-group-item">
+			  	Fan page
+			  </a>
+			</div>
+
+			<h4>I am Henry</h4>
+			<p style="font-size:16px;"><span style="padding-right:30px;"></span>A junior at Newport High School, I have always had an interest in the world of Technology. It all started off after getting my electricity kit in first grade. Every day I try to learn more about electrical engineering, computer science, and software development. </p>
+			<a href="/about" class="btn btn-default btn-lg btn-block">Read More</a>
+			
+		</div>
+
+		{#
+			The recent posts section of the page
+		#}
+		<div class="col-lg-7">
+			<div class="page-header">
+				<h2>Recent Posts</h2>
+			</div>
+			{# uses a blog_posts object to display the posts #}
+			{% set blog_posts_obj = blog_posts({posts:blog_posts}) %}
+			{{ blog_posts_obj.render() }}
+			<a href="/blog" class="btn btn-default btn-lg btn-block">Read More</a>
+		</div>
+
+	</div>
+{% endblock %}
+
+

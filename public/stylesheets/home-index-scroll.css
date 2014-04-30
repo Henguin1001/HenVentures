@@ -1,0 +1,28 @@
+html{
+	height: 100%;
+}
+body{
+	height: 100%;
+}
+header.dealwithit{
+	height: 100%;	
+	width: 100%;
+	position: relative;
+}
+.dealwithit-container {
+	position: absolute;
+	background-size: cover;
+	background-position: center;
+	width: 100%;
+	height: 100%;
+}
+.dealwithit-heading{
+	color: #5FC1E8;
+	font-family: 'Raleway';
+	font-size: 72px;
+	font-weight: 700;
+}
+.image-block {
+	max-width: 100%;
+	margin-bottom: 10px;
+}
