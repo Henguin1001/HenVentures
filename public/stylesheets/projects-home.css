@@ -1,0 +1,46 @@
+.project {
+	position: relative;
+	padding: 20px;
+	margin: 10px;
+	height: 150px;
+	overflow: hidden;
+}
+.project-image {
+	position: absolute;
+	right: 0;
+	top: 0;
+	max-height: 100%;
+	z-index: -10;
+}
+.project-image_wrapper {
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 100%;
+	background: rgba(255,255,255,1);
+	background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 14%, rgba(255,255,255,0) 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(14%, rgba(255,255,255,1)), color-stop(100%, rgba(255,255,255,0)));
+	background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 14%, rgba(255,255,255,0) 100%);
+	background: -o-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 14%, rgba(255,255,255,0) 100%);
+	background: -ms-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 14%, rgba(255,255,255,0) 100%);
+	background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 14%, rgba(255,255,255,0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1 );
+	z-index: -9;
+}
+.project-info {
+	
+}
+.project-title {
+	margin-right: 0.25em;
+	font-size: 16px;
+}
+.project-description {
+	font-size: 16px;
+}
+.project_list{
+	list-style-type: none;
+	padding-left: 0;
+}
+#project_search {
+	margin-top: 20px;
+}

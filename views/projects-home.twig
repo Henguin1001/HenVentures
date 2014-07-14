@@ -1,0 +1,63 @@
+{% extends 'theme-default.twig' %}
+
+
+{# 
+	All the twig objects to be used 
+#}
+
+{% include '/objects/navbar.twig' %}
+{% include '/objects/theme.twig' %}
+
+
+
+{#
+	Called in the html head - for adding scripts
+#}
+
+{% block setup %}
+	<link rel="stylesheet" type="text/css" href="./stylesheets/projects-home.css">
+	<script type="text/javascript" src="./javascripts/projects-home.js"></script>
+{% endblock %}
+
+{#
+	outside the main container goes the "navbar", in this instance it is a "header"
+#}
+{% block navbar %}
+	
+{% endblock %}
+
+{#
+	The content of the page
+#}
+
+
+{% block content %}
+	<div class="page-header">
+		<div class="row">
+			<div class="col-lg-8">
+				<h2 id="type">Recent</h2>
+			</div>
+			<div class="col-lg-4">
+				<form>
+					<input id="project_search" class="form-control" type="text" placeholder="Search Projects">
+				</form>
+			</div>
+		</div>
+	</div>
+	<ul class="project_list">
+		{% for project in projects %}
+			<li class="project row">
+				<img class="project-image" src="{{project.image}}"></img>
+				<div class="project-info col-lg-8">
+					<span class="project-title text-primary">{{project.name}} -</span>
+					<span class="project-description">
+						{{project.description }}
+					</span>
+					<a href="{{project.location}}" class="text-warning"><i>See more</i></a>
+				</div>
+			</li>
+		{% endfor %}
+	</ul>
+{% endblock %}
+
+

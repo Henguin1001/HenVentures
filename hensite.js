@@ -13,7 +13,7 @@ var Twig = require('twig'),
 Twig.extend(twig_obj);
 
 var	home = require('./routes/home.js'),
-	blog = require('./routes/blog.js');
+	projects = require('./routes/projects.js');
 
 
 // all environments
@@ -36,16 +36,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 if ('development' == app.get('env')) {
 	app.use(express.errorHandler());
 }
-app.get('/',home.index);
-app.get('/about', home.about);
+// establish all the routes
 
+// the single homepage
+app.get('/', home.index);
 
-app.get('/blog', blog.multiPost);
-app.get('/blog/page/*', blog.multiPost);
-app.get('/blog/category/*', blog.category);
-app.get('/blog/category/*/page/*', blog.category);
-app.get('/blog/archive/*', blog.singlePost);
+// everything to do with projects
+app.get('/projects', projects.home);
+app.get('/projects/*', projects.select);
+app.post('/projects/search', projects.search);
 
+// run the server
 http.createServer(app).listen(app.get('port'), function() {
 	console.log('Express server listening on port ' + app.get('port'));
 });

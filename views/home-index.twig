@@ -1,4 +1,4 @@
-{% extends 'home-default.twig' %}
+{% extends 'theme-default.twig' %}
 
 
 {# 
@@ -7,23 +7,7 @@
 
 {% include '/objects/navbar.twig' %}
 {% include '/objects/theme.twig' %}
-{% obj blog_posts %}
-	{% set this = __methods %}
-	{% prototype post_template %}
-		<a href="blog/archive/{{ post.id }}" class="list-group-item">
-			<h4 class="list-group-item-heading">{{ post.title }} - <i>{{ post.date }}</i> </h4>
-			<p class="list-group-item-text">{{ post.description }}</p>
-		</a>
-	{% endprototype %}
-	{% prototype render %}
-		<div class="list-group">
-		  {% for post in posts %}
-			  {{ this.post_template({post:post}) }}
-		  {% endfor %}
-		</div>
-	{% endprototype %}
 
-{% endobj %}
 
 
 {#
@@ -74,19 +58,6 @@
 			<a href="/about" class="btn btn-default btn-lg btn-block">Read More</a>
 			
 		</div>
-
-			{#
-				The recent posts section of the page
-			#}
-			<div class="col-lg-7">
-				<div class="page-header">
-					<h2>Recent Posts</h2>
-				</div>
-				{# uses a blog_posts object to display the posts #}
-				{% set blog_posts_obj = blog_posts({posts:blog_posts}) %}
-				{{ blog_posts_obj.render() }}
-				<a href="/blog" class="btn btn-default btn-lg btn-block">Read More</a>
-			</div>
 	</div>
 {% endblock %}
 
