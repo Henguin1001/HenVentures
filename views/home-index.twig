@@ -47,7 +47,9 @@
 {#
 	The content of the page
 #}
-{% block content %}
+
+
+{% block content_old %}
 	<div class="row" style="padding-top:30px;">
 
 		{#
@@ -73,19 +75,18 @@
 			
 		</div>
 
-		{#
-			The recent posts section of the page
-		#}
-		<div class="col-lg-7">
-			<div class="page-header">
-				<h2>Recent Posts</h2>
+			{#
+				The recent posts section of the page
+			#}
+			<div class="col-lg-7">
+				<div class="page-header">
+					<h2>Recent Posts</h2>
+				</div>
+				{# uses a blog_posts object to display the posts #}
+				{% set blog_posts_obj = blog_posts({posts:blog_posts}) %}
+				{{ blog_posts_obj.render() }}
+				<a href="/blog" class="btn btn-default btn-lg btn-block">Read More</a>
 			</div>
-			{# uses a blog_posts object to display the posts #}
-			{% set blog_posts_obj = blog_posts({posts:blog_posts}) %}
-			{{ blog_posts_obj.render() }}
-			<a href="/blog" class="btn btn-default btn-lg btn-block">Read More</a>
-		</div>
-
 	</div>
 {% endblock %}
 
