@@ -15,8 +15,8 @@
 #}
 
 {% block setup %}
-	<link rel="stylesheet" type="text/css" href="./stylesheets/projects-home.css">
-	<script type="text/javascript" src="./javascripts/projects-home.js"></script>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/projects-home.css">
+	<script type="text/javascript" src="/javascripts/projects-home.js"></script>
 {% endblock %}
 
 {#
@@ -35,11 +35,11 @@
 	<div class="page-header">
 		<div class="row">
 			<div class="col-lg-8">
-				<h2 id="type">Recent</h2>
+				<h2>{{title}}</h2>
 			</div>
 			<div class="col-lg-4">
-				<form>
-					<input id="project_search" class="form-control" type="text" placeholder="Search Projects">
+				<form method="post" action="/projects/search">
+					<input id="project_search" class="form-control" type="text" placeholder="Search Projects" name="query">
 				</form>
 			</div>
 		</div>

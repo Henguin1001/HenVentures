@@ -43,8 +43,9 @@ app.get('/', home.index);
 
 // everything to do with projects
 app.get('/projects', projects.home);
-app.get('/projects/*', projects.select);
 app.post('/projects/search', projects.search);
+
+app.get('/projects/*', projects.select);
 
 // run the server
 http.createServer(app).listen(app.get('port'), function() {

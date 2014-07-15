@@ -1,0 +1,71 @@
+{% extends 'theme-default.twig' %}
+
+
+{# 
+	All the twig objects to be used 
+#}
+
+{% include '/objects/navbar.twig' %}
+{% include '/objects/theme.twig' %}
+
+
+{#
+	Called in the html head - for adding scripts
+#}
+
+{% block setup %}
+	<link rel="stylesheet" type="text/css" href="/stylesheets/projects-select.css">
+	<script type="text/javascript" src="/javascripts/projects-select.js"></script>
+	<style type="text/css">
+		img {
+			max-width: 100%;
+		}
+		.row {
+			padding: 10px 5px;
+		}
+		p {
+			font-size: 16px;
+		}
+		.indent {
+			margin-right: 3em;
+		}
+	</style>
+{% endblock %}
+
+{#
+	outside the main container goes the "navbar"
+#}
+{% block navbar %}
+
+	{% if project.github %}
+		<a href="{{project.github}}"><img style="position: absolute; top: 0; right: 0; border: 0;z-index:10" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+	{% endif %}
+	<div class="project-header">
+		<img src="{{project.image}}" class="project-header-image">
+		<div class="project-title">
+			<div class="container">
+				<h2 style="padding:40px;">{{project.name}}</h2>
+			</div>
+		</div>
+	</div>
+	<div class="project-date_container">
+		<div class="container">
+			<h2 class="project-date" align="right">{{project.date}}</h2>
+		</div>
+	</div>
+{% endblock %}
+
+
+{#
+	The content of the page
+#}
+{% block content %}
+	<div class="row">
+		<p class="project-description lead">
+			{{project.description}}
+		</p>
+	</div>
+	{{project.content}}
+{% endblock %}
+
+

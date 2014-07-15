@@ -3,54 +3,64 @@
 <head>
 	<title>test</title>
 	<link rel="stylesheet" type="text/css" href="stylesheets/Lumen.css">
-	<link rel="stylesheet" type="text/css" href="stylesheets/projects-home.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/projects-select.css">
 	<script type="text/javascript" src="javascripts/jQuery.js"></script>
-	<script type="text/javascript" src="javascripts/projects-home.js"></script>
+	<script type="text/javascript" src="javascripts/projects-select.js"></script>
 	<style type="text/css">
-		#project_search {
-			margin-top: 20px;
+		img {
+			max-width: 100%;
+		}
+		.row {
+			padding: 10px 5px;
+		}
+		p {
+			font-size: 16px;
+		}
+		.indent {
+			margin-right: 3em;
 		}
 	</style>
 </head>
 <body>
 
-	<div class="container">
-		<div class="page-header">
-			<div class="row">
-				<div class="col-lg-8">
-					<h2 id="type">Recent</h2>
-				</div>
-				<div class="col-lg-4">
-					<form>
-						<input id="project_search" class="form-control" type="text" placeholder="Search Projects">
-					</form>
-				</div>
+	<div class="project-header">
+		<img src="http://placekitten.com/1500/500" class="project-header-image">
+		<div class="project-title">
+			<div class="container">
+				<h2 style="padding:40px;">Aluminum Forge</h2>
 			</div>
 		</div>
-		<ul class="project_list">
-			<li class="project row">
-				<img class="project-image" src="http://placekitten.com/5000/1000"></img>
-				
-				<div class="project-info col-lg-6">
-					<span class="project-title text-primary">Forge -</span>
-					<span class="project-description">
-						Lorem ipsum dolor sit amet, nec et propriae mediocrem, vero graece utamur cu cum, ad oporteat perpetua eum. Posse postea reprehendunt per an, sale imperdiet et usu.
-					</span>
-					<a href="http://google.com" class="text-warning"><i>See more</i></a>
-				</div>
-			</li>
-			<li class="project row">
-				<img class="project-image" src="http://placekitten.com/1500/500"></img>
-				
-				<div class="project-info col-lg-6">
-					<span class="project-title text-primary">Forge</span>
-					<span class="project-description">
-						Lorem ipsum dolor sit amet, nec et propriae mediocrem, vero graece utamur cu cum, ad oporteat perpetua eum. Posse postea reprehendunt per an, sale imperdiet et usu.
-					</span>
-				</div>
-			</li>
+	</div>
+	<a href="{{project.github}}"><img style="position: absolute; top: 0; right: 0; border: 0;z-index:10;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
 
-		</ul>
+	<div class="project-date_container">
+		<div class="container">
+			<h2 class="project-date" align="right">3/4/15</h2>
+		</div>
+	</div>
+	<div class="container">
+		<p class="project-description lead">
+			Lorem ipsum dolor sit amet, aeque noluisse referrentur has eu. At sumo natum quo. Meis accumsan intellegebat pri no. Qui no wisi elaboraret.
+		</p>
+		<div class="row">
+			<div class="col-lg-2">
+				<img src="http://placekitten.com/400/300" class="img-rounded">
+			</div>
+			<p class="col-lg-8"><span class="indent"></span>Ea soleat luptatum electram eam, partiendo interesset quo no. Paulo lobortis ne his. In mea nominavi officiis philosophia. An qui vidit saepe, ei cum eius mutat eripuit, eos reque zril no. Sit et autem fabellas torquatos, albucius indoctum cu vis, solet doming delectus vix ad.
+			</p>
+		</div>
+		<div class="row">
+			<p class="col-lg-8"><span class="indent"></span>Ea soleat luptatum electram eam, partiendo interesset quo no. Paulo lobortis ne his. In mea nominavi officiis philosophia. An qui vidit saepe, ei cum eius mutat eripuit, eos reque zril no. Sit et autem fabellas torquatos, albucius indoctum cu vis, solet doming delectus vix ad. Vel cu idque saepe, summo iriure conceptam te vim, et impetus denique has. Ei eos atomorum omittantur, purto dicunt omnesque te ius. Duo eu ipsum diceret tacimates. Justo commodo eos ei.<br>
+
+			<span class="indent"></span> Ne nec integre torquatos, amet utinam eruditi mel ei. Per animal voluptua eu, sea periculis dissentiunt at, an albucius disputando reprehendunt mel. Duo quem fuisset ea, ei congue nostrud reformidans nam. Quo legimus epicurei corrumpit no, te primis delenit meliore nec, quod petentium an usu. Graecis sensibus ex cum, iriure instructior eu pro. Eu persecuti eloquentiam adversarium quo, te sumo nonumy mandamus quo.
+
+			
+			</p>
+			<div class="col-lg-4">
+				<img src="http://placekitten.com/1000/750" class="img-rounded">
+			</div>
+		</div>
+		
 
 	</div>
 </body>
