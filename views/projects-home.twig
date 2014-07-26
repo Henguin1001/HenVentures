@@ -38,8 +38,8 @@
 				<h2>{{title}}</h2>
 			</div>
 			<div class="col-lg-4">
-				<form method="post" action="/projects/search">
-					<input id="project_search" class="form-control" type="text" placeholder="Search Projects" name="query">
+				<form method="get" action="/projects/search/">
+					<input id="project_search" class="form-control" autocomplete="off" type="text" placeholder="Search Projects" name="q">
 				</form>
 			</div>
 		</div>
@@ -51,13 +51,19 @@
 				<div class="project-info col-lg-8">
 					<span class="project-title text-primary">{{project.name}} -</span>
 					<span class="project-description">
-						{{project.description }}
+						{{project.description}}
 					</span>
-					<a href="{{project.location}}" class="text-warning"><i>See more</i></a>
+					<a href="/projects/{{project._id}}" class="text-warning"><i>See more</i></a>
 				</div>
 			</li>
 		{% endfor %}
 	</ul>
+	{% if pagination %}
+		<ul class="pager">
+			<li class="previous {% if page_number - 1 < 0 %} disabled {% endif %}"><a href="#">← Newer</a></li>
+			<li class="next {% if page_number + 1 >= page_total %} disabled {% endif %}"><a href="#">Older →</a></li>
+		</ul>
+	{% endif %}
 {% endblock %}
 
 

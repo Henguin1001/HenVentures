@@ -1,7 +1,7 @@
 {
   "name": "HenVentures",
-  "author":"Henry Troutman",
-  "description":"Henry's personal website, built in nodejs with express",
+  "author": "Henry Troutman",
+  "description": "Henry's personal website, built in nodejs with express",
   "version": "0.0.3",
   "private": true,
   "scripts": {

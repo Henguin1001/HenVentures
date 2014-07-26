@@ -43,7 +43,9 @@ app.get('/', home.index);
 
 // everything to do with projects
 app.get('/projects', projects.home);
-app.post('/projects/search', projects.search);
+app.get('/projects/p/*', projects.home);
+
+app.get('/projects/search/', projects.search);
 
 app.get('/projects/*', projects.select);
 
