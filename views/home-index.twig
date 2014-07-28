@@ -17,6 +17,7 @@
 {% block setup %}
 	<link href="http://fonts.googleapis.com/css?family=Raleway:200,100,400,700" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="./stylesheets/home-index-scroll.css">
+	<link rel="stylesheet" type="text/css" href="./stylesheets/home-index.css">
 	<script type="text/javascript" src="./javascripts/home-index-scroll.js"></script>
 {% endblock %}
 
@@ -24,8 +25,43 @@
 	outside the main container goes the "navbar", in this instance it is a "header"
 #}
 {% block navbar %}
-	{% set nav = header_henryisawesome({ henryis:["awesome.","looking for internships.","cloud-computing.","back from fishin&#39;."], image:"./images/dealwithit.jpg" }) %}
+	{% set nav = header_henryisawesome({ henryis:["awesome.","looking for internships.","ccna certified.","back from fishin&#39;."], image:"./images/dealwithit.jpg" }) %}
 	{{ nav.render }}
+
+	<div class="well" id="about" name="about">
+		<div class="container">
+			<div class="col-lg-8 col-lg-offset-2">
+				<p class="lead"><span class="indent"></span>I am Henry Troutman, a student in high school, I enjoy building cool things in my free time. My projects range from adventures in software development to persuits in electrical engineering.</p>
+				<div class="image_container">
+					<img src="images/profile.jpg">
+				</div>
+			</div>
+
+		</div>
+	</div>
+	
+	<div class="container story" id="internships" name="internships">
+		<div class="row col-lg-8 col-lg-offset-2">
+			<img src="images/internships.png">
+		</div>
+		<div class="row col-lg-6 col-lg-offset-3" style="margin-top:10px;">
+			<p>If you are interested in hiring me you can contact me at <a href="">henguin1001@gmail.com</a>.</p>
+		</div>
+	</div>
+	<div class="well story" style="margin-bottom:0;">
+		<div class="container">
+			<div class="row col-lg-8 col-lg-offset-2" style="padding:20px;">
+				<img src="images/github.png">
+			</div>
+			<div class="row col-lg-6 col-lg-offset-3" style="margin-top:10px;">
+				<p>Follow all my software projects on github. <a href="">@henguin1001</a></p>
+			</div>
+		</div>
+	</div>
+	<footer>
+	</footer>
+
+
 {% endblock %}
 
 

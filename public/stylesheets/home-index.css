@@ -1,0 +1,24 @@
+.indent {
+	margin-right: 3em;
+}
+img {
+	max-width: 100%;
+}
+#about {
+	padding: 50px;
+}
+.image_container{
+	padding: 25px 80px;
+}
+.story {
+	padding: 150px 0;
+}
+.story p{
+	text-align: center;
+}
+footer{
+	background-image: url('/images/footer.jpg');
+	height: 50%;
+	background-repeat: repeat-x;
+	background-size: contain;
+}

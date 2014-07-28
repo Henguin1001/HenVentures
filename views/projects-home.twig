@@ -23,7 +23,8 @@
 	outside the main container goes the "navbar", in this instance it is a "header"
 #}
 {% block navbar %}
-	
+	{% set navbar = navbar() %}
+	{{ navbar.show({active:"projects"}) }}
 {% endblock %}
 
 {#
