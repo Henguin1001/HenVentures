@@ -55,17 +55,17 @@ window.onload = function() {
   css.type = "text/css";
   css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #5FC1E8 }";
   document.body.appendChild(css);
-  $('.center').each(function(){
-    var parentHeight = $(this).parent().height();
-    var elementHeight = $(this).height();
-    $(this).css('margin-top',(parentHeight/2-elementHeight)+'px');
-  });
+  forceCenter();
 };
 
 $(window).resize(function(){
-  $('.center').each(function(){
+  forceCenter();
+});
+
+function forceCenter(){
+  $('.center').each(function() {
     var parentHeight = $(this).parent().height();
     var elementHeight = $(this).height();
-    $(this).css('margin-top',(parentHeight/2-elementHeight)+'px');
+    $(this).css('margin-top', (parentHeight / 2 - elementHeight) + 'px');
   });
-});
+};
