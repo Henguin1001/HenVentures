@@ -25,7 +25,7 @@
 	outside the main container goes the "navbar", in this instance it is a "header"
 #}
 {% block navbar %}
-	{% set nav = header_henryisawesome({ henryis:["awesome.","looking for internships.","ccna certified.","back from fishin&#39;."], image:"./images/dealwithit.jpg" }) %}
+	{% set nav = header_henryisawesome({ henryis:["awesome.","looking for internships.","CCNA certified.","back from fishin&#39;."], image:"./images/dealwithit.jpg" }) %}
 	{{ nav.render }}
 
 	<div class="well" id="about" name="about">
@@ -64,36 +64,5 @@
 
 {% endblock %}
 
-
-{#
-	The content of the page
-#}
-{% block content_old %}
-	<div class="row" style="padding-top:30px;">
-
-		{#
-			The Info section about Henry
-		#}
-		<div class="col-lg-5">
-			<div class="page-header">
-				<h2>Who is Henry?</h2>
-			</div>
-			<img src="./images/profile.jpg" class="image-block">
-			<div class="list-group">
-			  <a href="https://github.com/Henguin1001" class="list-group-item">
-				Github
-			  </a>
-			  <a href="https://www.facebook.com/pages/Fans-of-Henry-Troutman/111370232381839" class="list-group-item">
-			  	Fan page
-			  </a>
-			</div>
-
-			<h4>I am Henry</h4>
-			<p style="font-size:16px;"><span style="padding-right:30px;"></span>A junior at Newport High School, I have always had an interest in the world of Technology. It all started off after getting my electricity kit in first grade. Every day I try to learn more about electrical engineering, computer science, and software development. </p>
-			<a href="/about" class="btn btn-default btn-lg btn-block">Read More</a>
-			
-		</div>
-	</div>
-{% endblock %}
 
 

@@ -18,13 +18,17 @@ var	home = require('./routes/home.js'),
 	projects = require('./routes/projects.js');
 
 
+try{
+	var settings = require('./settings.secret.json');
+	app.set('port', settings.port_number);
+} catch(e){
+	app.set('port', 3001);
+}
+
+
 // all environments
-app.set('port', process.env.PORT || 3001);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'twig');
-
-app.use(express.cookieParser());
-app.use(express.session({secret: 'henryissupercool'}));
 
 app.use(express.favicon());
 app.use(express.logger('dev'));
